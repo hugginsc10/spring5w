@@ -13,9 +13,9 @@
     <th>Books</th>
   </tr>
   <tr th:each="author : ${authors}">
-    <td th:text="${author.id}">123</td>
-    <td th:text="${author.firstName + author.lastName}">name</td>
-    <td th:text="${author.getBooks()}">books</td>
+    <td th:text="${author.id}"></td>
+    <td th:text="${author.firstName + author.lastName}"></td>
+    <td th:text="${author.getBooks()}"></td>
   </tr>
 </table>
 </body>
