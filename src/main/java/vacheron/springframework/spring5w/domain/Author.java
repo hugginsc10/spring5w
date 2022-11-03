@@ -1,9 +1,8 @@
-package vacheron.springframework.domain;
+package vacheron.springframework.spring5w.domain;
 
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.IdentityHashMap;
 import java.util.Set;
 
 @Entity
@@ -15,17 +14,19 @@ public class Author {
     private Long id;
     private String firstName;
     private String lastName;
-    @ManyToMany
+    @ManyToMany(mappedBy = "authors")
 
     private Set<Book> books = new HashSet<>();
 
-    public Author( String firstName, String lastName) {
+    public Author() {
+    }
+
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Author() {
-    }
+
 
     public Long getId() {
         return id;
@@ -60,6 +61,16 @@ public class Author {
     }
 
     @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", books=" + books +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -73,4 +84,6 @@ public class Author {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
+
+
 }

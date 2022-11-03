@@ -1,7 +1,8 @@
-package vacheron.springframework.repositories;
+package vacheron.springframework.spring5w.repositories;
 
+import vacheron.springframework.spring5w.domain.Book;
 import org.springframework.data.repository.CrudRepository;
-import vacheron.springframework.domain.Book;
+
 
 public interface BookRepository extends CrudRepository<Book, Long> {
 }
